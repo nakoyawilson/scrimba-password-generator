@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap");
+
+:root {
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Karla", sans-serif;
+  --very-dark-blue: hsl(215, 28%, 17%);
+  --dark-blue: hsl(215, 30%, 22%);
+  --very-light-green: hsl(152, 81%, 96%);
+  --pure-white: hsl(0, 0%, 100%);
+  --medium-green1: hsl(144, 70%, 58%);
+  --medium-green2: hsl(160, 84%, 39%);
+  --medium-green3: hsl(142, 93%, 65%);
+  --medium-green4: hsl(142, 82%, 65%);
+  --medium-grey: hsl(255, 5%, 84%);
+  --dark-grey: hsl(220, 9%, 46%);
+  --black: hsl(250, 18%, 19%);
+  --shadow: rgba(0, 0, 0, 0.05);
+  --dark-blue-border: hsl(215, 28%, 25%);
+  --dark-green: hsl(163, 88%, 20%);
+}
+
+.dark-theme {
+  --body-bg: var(--very-dark-blue);
+  --main-heading: var(--pure-white);
+  --heading-accent: var(--medium-green1);
+  --color-paragraph: var(--medium-grey);
+  --border: var(--dark-blue-border);
+  --password-text: var(--medium-green3);
+}
+
+.light-theme {
+  --body-bg: var(--very-light-green);
+  --main-heading: var(--black);
+  --heading-accent: var(--medium-green2);
+  --color-paragraph: var(--dark-grey);
+  --border: var(--medium-grey);
+  --password-text: var(--medium-green4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--body-bg);
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100%, 550px);
+  padding: 2.4rem;
+}
+
+.title {
+  color: var(--main-heading);
+  font-family: var(--font-secondary);
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.025em;
+}
+
+.title .accent {
+  display: block;
+  color: var(--heading-accent);
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  color: var(--color-paragraph);
+  margin-top: 1rem;
+}
+
+.btn {
+  margin-top: 5.1rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  padding: 0.9rem 1.7rem 0.9rem 1.5rem;
+  background: var(--medium-green2);
+  box-shadow: 0px 1px 2px var(--shadow);
+  border-radius: 6px;
+  color: var(--pure-white);
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.passwords-container {
+  margin-top: 3.5rem;
+  padding: 3.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 3.9rem;
+  gap: 2.4rem;
+  border-top: 1px solid var(--border);
+}
+
+.password {
+  display: block;
+  background: var(--dark-blue);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  text-align: center;
+  color: var(--password-text);
+  padding: 0.4rem 0.9rem 0.3rem 1rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 440px) {
+  .container {
+    padding: 5.2rem;
+  }
+  .title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .paragraph {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+
+  .passwords-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background: var(--dark-green);
+  }
+}
